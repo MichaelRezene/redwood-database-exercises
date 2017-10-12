@@ -1,7 +1,5 @@
 USE employees;
 
-SUSE employees;
-
 SELECT
   first_name,
   last_name
