@@ -1,4 +1,7 @@
-USE employee;
+USE employees;
+
+SUSE employees;
+
 SELECT
   first_name,
   last_name
@@ -47,11 +50,14 @@ WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31';
 
 SELECT
   hire_date,
-  first_name
+  first_name,
+  last_name
 FROM employees
 WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
       AND birth_date LIKE '%-12-25'
-ORDER BY birth_date, hire_date DESC;
+ORDER BY birth_date, hire_date DESC
+limit 5
+OFFSET 45;
 
 SELECT
   hire_date,
@@ -78,3 +84,9 @@ GROUP BY  last_name;
 
 select title from titles
 GROUP BY title;
+
+
+select DISTINCT e.last_name
+from employees e
+ORDER BY e.last_name desc
+limit 10;
